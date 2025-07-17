@@ -1,0 +1,8 @@
+- name: Check if secret is loaded
+  run: |
+    if [ -z "${{ secrets.DOCKERHUB_TOKEN }}" ]; then
+      echo "❌ DOCKERHUB_TOKEN is not set"
+      exit 1
+    else
+      echo "✅ DOCKERHUB_TOKEN is set"
+    fi
